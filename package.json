@@ -1,0 +1,28 @@
+{
+  "name": "prdmo-website",
+  "private": true,
+  "description": "",
+  "version": "0.1.0",
+  "author": "Ralph Perdomo <ralph@prdmo.com>",
+  "dependencies": {
+    "gatsby": "^2.3.3",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
+  }
+}
