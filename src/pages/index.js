@@ -2,6 +2,7 @@ import React from 'react';
 import getPosts from '../helpers/getPosts';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import '../style/layout.css';
+import Menu from '../components/menu';
 
 const Header = () => {
   return (
@@ -19,6 +20,7 @@ const Header = () => {
       render={data => {
         return (
           <div>
+            <Menu />
             <h1>{data.site.siteMetadata.title}</h1>
             <p>{data.site.siteMetadata.description}</p>
           </div>

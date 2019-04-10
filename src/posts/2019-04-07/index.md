@@ -6,4 +6,4 @@ tags: ['first']
 excerpt: 'this is the very first post'
 ---
 
-The smell of breasd is intoxicating. Baking bread. Smells good.
+The smell of bread is intoxicating. Smells good.
