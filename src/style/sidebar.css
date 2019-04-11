@@ -8,9 +8,9 @@
   height: 100vh;
   z-index: 999;
   position: fixed;
-  background: #ffffff;
+  background: #f8f8f8;
   width: 20rem;
-  border-right: 1px solid #000000;
+  border-right: 1px solid #e8e8e8;
 }
 
 .sidebar-close-icon {
@@ -35,7 +35,7 @@
   display: block;
   padding-bottom: 0.5rem;
   text-decoration: none;
-  width: 7rem;
+  width: 10rem;
   box-sizing: border-box;
 }
 
