@@ -1,6 +1,6 @@
 import React from 'react';
 import getPosts from '../helpers/getPosts';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import '../style/layout.css';
 import Menu from '../components/menu';
 
@@ -32,7 +32,7 @@ const Header = () => {
 
 function IndexPage() {
   const allPosts = getPosts();
-  console.log(allPosts.nodes);
+
   return (
     <div>
       <Header />

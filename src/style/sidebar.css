@@ -1,42 +1,62 @@
+:root {
+  --black-text: #393939;
+}
+
 .sidebar-main {
   top: 0;
   display: block;
   height: 100vh;
   z-index: 999;
   position: fixed;
-  background: white;
-  width: 20em;
-  border-right: 1px solid black;
+  background: #ffffff;
+  width: 20rem;
+  border-right: 1px solid #000000;
 }
 
-.sidebar-main-icon {
+.sidebar-close-icon {
+  width: 2rem;
   float: right;
   cursor: pointer;
-  margin: 0.3em;
+  margin: 0.3rem;
 }
 
 .sidebar-links-container {
-  margin-top: 5em;
+  margin-top: 5rem;
 }
 
 .sidebar-links-container ul {
   list-style-type: none;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.sidebar-links-container a {
+  color: var(--black-text);
+  display: block;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  width: 7rem;
+  box-sizing: border-box;
+}
+
+a.sidebar-link-active {
+  border-bottom: 0.3rem solid var(--black-text);
 }
 
 .sidebar-links-container li {
-  margin-bottom: calc(5rem / 2);
-  font-size: 2em;
+  margin-bottom: 3.5rem;
+  font-size: 2rem;
   font-family: monospace;
   letter-spacing: 0.1em;
-  color: #393939;
+  box-sizing: border-box;
 }
 
 .sidebar-footer {
   position: fixed;
   bottom: 0;
-  background: #5a5a5a;
+  background: var(--black-text);
   display: block;
-  color: white;
+  color: #ffffff;
   height: 3em;
   width: inherit;
 }
@@ -48,5 +68,5 @@
 
 .sidebar-footer-image {
   margin: 0;
-  padding: 0.7em 1em;
+  padding: 0.7rem 1rem;
 }
