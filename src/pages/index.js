@@ -2,7 +2,7 @@ import React from 'react';
 import getPosts from '../helpers/getPosts';
 import { StaticQuery, graphql } from 'gatsby';
 import '../style/layout.css';
-import Menu from '../components/menu';
+import menuHOC from '../components/menuHOC';
 
 const Header = () => {
   return (
@@ -20,7 +20,6 @@ const Header = () => {
       render={data => {
         return (
           <div>
-            <Menu />
             <h1>{data.site.siteMetadata.title}</h1>
             <p>{data.site.siteMetadata.description}</p>
           </div>
@@ -43,4 +42,4 @@ function IndexPage() {
   );
 }
 
-export default IndexPage;
+export default menuHOC(IndexPage);

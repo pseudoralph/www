@@ -1,13 +1,8 @@
 import React from 'react';
-import Menu from '../components/menu';
+import menuHOC from '../components/menuHOC';
 
 function Code() {
-  return (
-    <div>
-      <Menu />
-      code
-    </div>
-  );
+  return <div>code</div>;
 }
 
-export default Code;
+export default menuHOC(Code);

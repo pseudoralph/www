@@ -1,13 +1,8 @@
 import React from 'react';
-import Menu from '../components/menu';
+import menuHOC from '../components/menuHOC';
 
 function Words() {
-  return (
-    <div>
-      <Menu />
-      words
-    </div>
-  );
+  return <div>words</div>;
 }
 
-export default Words;
+export default menuHOC(Words);
