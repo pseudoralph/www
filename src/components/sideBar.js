@@ -6,8 +6,9 @@ import '../style/sidebar.css';
 const SideBar = ({ isShowing, closeSidebar }) => {
   return (
     <div
+      onPointerLeave={() => closeSidebar()}
       className="sidebar-main"
-      style={isShowing ? { display: 'block' } : { display: 'none' }}
+      style={isShowing ? { left: '0' } : { left: '-20rem' }}
     >
       <img
         className="sidebar-close-icon"

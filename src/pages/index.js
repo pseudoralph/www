@@ -3,6 +3,7 @@ import getPosts from '../helpers/getPosts';
 import { StaticQuery, graphql } from 'gatsby';
 import '../style/layout.css';
 import menuHOC from '../components/menuHOC';
+// import SomeData from '../helpers/someData';
 
 const Header = () => {
   return (
