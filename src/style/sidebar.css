@@ -54,7 +54,7 @@ a.sidebar-link-active {
 }
 
 .sidebar-footer {
-  position: fixed;
+  position: inherit;
   bottom: 0;
   background: var(--black-text);
   display: block;
