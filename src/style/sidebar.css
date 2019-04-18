@@ -3,16 +3,18 @@
 }
 
 .sidebar-main {
-  transition: all 0.5s ease 0s;
-  top: 0;
   display: block;
-  height: 100vh;
-  z-index: 999;
   position: absolute;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
   background: #f8f8f8;
   width: 20rem;
   left: -20rem;
   border-right: 1px solid #f2f2f2;
+  transition: all 0.5s ease 0s;
+  z-index: 999;
 }
 
 .sidebar-close-icon {
