@@ -1,0 +1,17 @@
+:root {
+  --black-text: #393939;
+}
+
+.title-heading {
+  outline: var(--black-text) solid 5px;
+  outline-offset: 0.25em;
+  display: table;
+  margin: 0px auto;
+}
+
+.intro-text {
+  color: var(--black-text);
+  text-align: center;
+  margin-top: 4em;
+  font-family: sans-serif;
+}
