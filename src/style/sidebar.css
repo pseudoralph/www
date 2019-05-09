@@ -6,7 +6,7 @@
   display: block;
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   box-sizing: border-box;
   background: #f8f8f8;
