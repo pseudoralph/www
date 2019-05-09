@@ -19,9 +19,11 @@ const Header = () => {
       `}
       render={data => {
         return (
-          <div>
-            <h1 className="title-heading ">{data.site.siteMetadata.title}</h1>
-            <p className="intro-text">{data.site.siteMetadata.description}</p>
+          <div className="index-wrapper-div">
+            <h1 className="index-title">{data.site.siteMetadata.title}</h1>
+            <p className="index-description">
+              {data.site.siteMetadata.description}
+            </p>
           </div>
         );
       }}
