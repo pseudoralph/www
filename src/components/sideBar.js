@@ -19,7 +19,7 @@ const SideBar = ({ isShowing, closeSidebar }) => {
       <div className="sidebar-links-container">
         <ul>
           <li>
-            <Link activeClassName="sidebar-link-active" to="/">
+            <Link to="/" activeClassName="sidebar-link-active">
               /
             </Link>
           </li>

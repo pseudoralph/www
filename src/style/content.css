@@ -1,0 +1,22 @@
+:root {
+  --black-text: #393939;
+}
+
+.title-heading {
+  top: 0;
+  position: sticky;
+  font-family: monospace;
+  padding: 0.6em 0 0.3em;
+  background: white;
+  color: var(--black-text);
+}
+
+.article-div {
+  display: inline-block;
+  width: calc(50vw - 5em);
+  padding: 1em;
+  margin: 1em;
+  padding: 0.3em 0.5em;
+  border-radius: 0.01em;
+  box-shadow: 0 0 0 5px var(--black-text);
+}

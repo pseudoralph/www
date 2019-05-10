@@ -1,8 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import '../style/layout.css';
-import '../style/index.css';
 import menuHOC from '../components/menuHOC';
+import '../style/index.css';
 
 const Header = () => {
   return (

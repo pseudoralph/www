@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import { menuBarIcon } from '../images/ui';
 import SideBar from './sideBar';
 import '../style/menu.css';
+import '../style/layout.css';
 
 const MenuHOC = WrappedComponent => {
-  return props => {
+  const leftGutter = {
+    margin: '0 0 0 4em'
+  };
+  return () => {
     const [menuToggle, setMenuToggle] = useState(false);
 
     return (
       <div>
         <img
           onClick={() => setMenuToggle(true)}
-          className="pancake-icon"
+          className="menu-icon-img"
           alt="menu bar"
           src={menuBarIcon}
         />
@@ -19,7 +23,7 @@ const MenuHOC = WrappedComponent => {
           isShowing={menuToggle}
           closeSidebar={() => setMenuToggle(false)}
         />
-        <WrappedComponent />
+        <WrappedComponent style={leftGutter} />
       </div>
     );
   };
