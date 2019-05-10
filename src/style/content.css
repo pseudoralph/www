@@ -14,9 +14,14 @@
 .article-div {
   display: inline-block;
   width: calc(50vw - 5em);
-  padding: 1em;
   margin: 1em;
   padding: 0.3em 0.5em;
   border-radius: 0.01em;
   box-shadow: 0 0 0 5px var(--black-text);
+}
+
+@media only screen and (max-width: 860px) {
+  .article-div {
+    width: calc(90vw - 5em);
+  }
 }
