@@ -5,9 +5,6 @@ import '../style/menu.css';
 import '../style/layout.css';
 
 const MenuHOC = WrappedComponent => {
-  const leftGutter = {
-    margin: '0 0 0 4em'
-  };
   return () => {
     const [menuToggle, setMenuToggle] = useState(false);
 
@@ -23,7 +20,7 @@ const MenuHOC = WrappedComponent => {
           isShowing={menuToggle}
           closeSidebar={() => setMenuToggle(false)}
         />
-        <WrappedComponent style={leftGutter} />
+        <WrappedComponent className="works" />
       </div>
     );
   };

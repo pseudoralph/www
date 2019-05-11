@@ -3,10 +3,13 @@ import menuHOC from '../components/menuHOC';
 import '../style/layout.css';
 import '../style/content.css';
 
-function Code(props) {
+function Code() {
   return (
-    <div style={props.style}>
-      <h1 className="title-heading">/code</h1>
+    <div className="outer-wrapper">
+      <div className="title-heading-div">
+        <h1 id="title-heading">/code</h1>
+      </div>
+      <div className="articles-wrapper" />
     </div>
   );
 }
