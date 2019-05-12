@@ -4,7 +4,7 @@
 
 .sidebar-main {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 100%;
   overflow: hidden;
@@ -12,7 +12,6 @@
   background: #f8f8f8;
   width: 20rem;
   left: -20rem;
-  /* border-right: 1px solid #f2f2f2; */
   transition: all 0.5s ease 0s;
   z-index: 999;
 }
@@ -25,8 +24,7 @@
 }
 
 .sidebar-links-container {
-  /* margin-top: 5rem; */
-  position: relative;
+  position: absolute;
   top: 20vh;
 }
 
@@ -58,7 +56,7 @@ a.sidebar-link-active {
 }
 
 .sidebar-footer {
-  position: inherit;
+  position: absolute;
   bottom: 0;
   background: var(--black-text);
   display: block;
