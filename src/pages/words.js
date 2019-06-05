@@ -1,6 +1,6 @@
 import React from 'react';
 import menuHOC from '../components/menuHOC';
-import getPosts from '../helpers/getPosts';
+import { getPosts } from '../helpers/getPosts';
 import '../style/layout.css';
 import '../style/content.css';
 

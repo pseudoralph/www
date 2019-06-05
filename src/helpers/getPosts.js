@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const getPosts = () => {
+export const getPosts = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -21,4 +21,4 @@ const getPosts = () => {
   return allMarkdownRemark;
 };
 
-export default getPosts;
+export const getCompletePost = () => {};
