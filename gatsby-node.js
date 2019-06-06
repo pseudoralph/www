@@ -4,35 +4,36 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
 
-  return graphql(`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              title
-              path
-              date
-              excerpt
+  return new Promise((resolve, reject) => {
+    graphql(`
+      query {
+        allMarkdownRemark {
+          edges {
+            node {
+              frontmatter {
+                title
+                path
+                date
+                excerpt
+              }
+              id
             }
-            id
           }
         }
       }
-    }
-  `).then(result => {
-    console.log(result);
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      // const path = node.frontMatter.path;
-      console.log(node);
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate,
-        context: {
-          pathSlug: path,
-          render: true
-        }
+    `).then(result => {
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: `/words${node.frontmatter.path}`,
+          component: postTemplate,
+          context: {
+            pathSlug: node.frontmatter.path,
+            render: true
+          }
+        });
       });
     });
+
+    resolve();
   });
 };
