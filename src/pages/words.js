@@ -1,26 +1,23 @@
 import React from 'react';
 import menuHOC from '../components/menuHOC';
-import { getPosts } from '../helpers/getPosts';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import '../style/layout.css';
 import '../style/content.css';
 
-function Words() {
-  const allPosts = getPosts();
-
-  console.log(allPosts);
-
+function Words({ data: { allMarkdownRemark } }) {
   return (
     <div className="outer-wrapper">
       <div className="title-heading-div">
         <h1 id="title-heading">/words</h1>
       </div>
       <div className="articles-wrapper">
-        {allPosts.nodes.map(post => (
-          <div className="individual-article-div" key={post.id}>
-            <h2>{post.frontmatter.title}</h2>
+        {allMarkdownRemark.edges.map(({ node }) => (
+          <div className="individual-article-div" key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
             <p>
-              <Link to={post.frontmatter.path}>{post.frontmatter.excerpt}</Link>
+              <Link to={`words${node.frontmatter.path}`}>
+                {node.frontmatter.excerpt}
+              </Link>
             </p>
           </div>
         ))}
@@ -28,5 +25,24 @@ function Words() {
     </div>
   );
 }
+
+export const query = graphql`
+  query getAllPosts {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            path
+            tags
+            excerpt
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default menuHOC(Words);
