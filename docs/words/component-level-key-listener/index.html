@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.3.15"/><link as="script" rel="preload" href="/webpack-runtime-c27e3a610803bca512b0.js"/><link as="script" rel="preload" href="/app-d3019675980cf0abf4f2.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-e53e03350cbcd581c191.js"/><link as="fetch" rel="preload" href="/static/d/946/path---words-component-level-key-listener-dab-000-N441f0oOSDLllqayMBjWI2NA.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div><div><h1>Component-level key listener</h1>
+<p>Key listeners are inherently bound to input elements. This makes sense but presents a challenge when you want to continuously listen for key strokes and respond when a component has no input element.</p>
+<p>Take the example of an informational modal or pop-up. It would be logical that the user be able to go back to the previously rendered view by hitting the escape key.</p>
+<p>Let's make that functionality.</p>
+<h3>Make the div focus-able</h3>
+<p>For starters, there must be some element that accepts input—there's no away around it. You can't just slap a tabIndex property to a div and call it a day. But that's exactly where we'll to start:</p>
+<pre><code>&#x3C;div tabIndex='0' onKeyUp={ (e)=>console.log('typing...') } >
+    [...]
+&#x3C;/div>
+</code></pre>
+<p>You'll quickly find that key-up events aren't registering until after the user's clicked within the div. Clicking the div into focus is not ideal and works against a positive user experience.</p>
+<p>Recall that a modal or pop-up typically has some UI element to close its view and go back. Make sure this is done through a button element, not an image tag with an event handler attached. Give this button an autoFocus attribute. In essence, the parent div "inherits" focus from its child (the button's in focus, but events will bubble and be caught by its parent).</p>
+<p>Not only does this free the user from having to click within the div to focus it, it's also an a11y best practice.</p>
+<p>Make sure you're doing this:</p>
+<pre><code>&#x3C;button autoFocus onClick={ ()=> close(); } >
+    &#x3C;img src={ backButton } />
+&#x3C;/button>
+</code></pre>
+<p>Not this:</p>
+<pre><code>&#x3C;img src={ backButton } onClick={ ()=> close(); } />
+</code></pre>
+<p>Now, a11y best practice would frown upon disabling an element's focus outline (you know, the light blue border around active input elements). For the sake of a nicer UI, I've chosen to hide this outline in CSS. (note the inclusion of the div:focus selector, tabIndex will add an outline to the div, a rather unattractive side effect)</p>
+<pre><code> button:focus, div:focus {
+    outline: 0
+ }
+</code></pre>
+<p>Our example now looks like this:</p>
+<pre><code>&#x3C;div tabIndex='0' onKeyUp={ (e)=> e.keyCode === 27 ? close() : null } >
+    &#x3C;button autoFocus onClick={ ()=> close(); } >
+        &#x3C;img src={ backButton } />
+    &#x3C;/button>
+&#x3C;/div>
+</code></pre>
+<h3>Plot twist!</h3>
+<p>The example above works best with simple modals and pop-ups, not ones that allow the user to edit additional information—say in the example of a contact list.</p>
+<p>Let's reasess.</p>
+<p>The user should still be able to navigate backwards by hitting the escape key. Our modal, however, allows the user to edit information. Clicking an edit button will transform a static view of contact information into an editable one. But the user now expects the escape key to cancel edits.</p>
+<pre><code>// this works, but you'll never see it
+&#x3C;form onKeyUp={ (e)=> e.keyCode === 27 ? setIsEditing(!isEditing) : null }>
+    [...]
+&#x3C;/form>
+</code></pre>
+<p>Event bubbling, however, causes the escape key to go all the way back. Not just the current edit view. We need to suppress event bubbling in children components.</p>
+<pre><code>&#x3C;form onKeyUp={ (e)=> {
+    if (e.keyCode === 27) {
+        e.stopPropagation();
+        setIsEditing(!isEditing); }
+        }
+    } >
+    [...]
+&#x3C;/form>
+</code></pre>
+<p>Great! The user can now hit escape within the editable form and go back to viewing static information.</p>
+<p>But the user can't hit escape again to go back another view. Our form retains focus and this requires the user to, once again, click on the div to change focus restoring escape key functionality.</p>
+<p>We're right back to where we started. Ugh!</p>
+<h3>The fix!</h3>
+<p>Let's explicitly tell our form where focus should go next.</p>
+<p>We'll start by creating a reference to our back button:</p>
+<pre><code>const backButtonRef = React.createRef();
+
+return (
+&#x3C;button autoFocus ref={ backButtonRef } onClick={ ()=> close(); } >
+ [...]
+</code></pre>
+<p>And calling it within our form:</p>
+<pre><code>&#x3C;form onKeyUp={ (e)=> {
+    if (e.keyCode === 27) {
+        e.stopPropagation();
+        setIsEditing(!isEditing);
+        backButtonRef.current.focus(); }
+        }
+    } >
+    [...]
+&#x3C;/form>
+</code></pre>
+<p>That's it! Now hitting escape from the edit view will restore the modal to its un-edited state. Hitting escape once more will render the previous view—all without clicking the mouse!</p>
+<p>Yes, it may be a bit much to go through all this for just some simple functionality (and maybe there's an easier way of doing this that I'm not aware of), but it's these small details that makes the user's experience that much more enjoyable.</p></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-post-js","jsonName":"words-component-level-key-listener-dab","path":"/words/component-level-key-listener"};window.dataPath="946/path---words-component-level-key-listener-dab-000-N441f0oOSDLllqayMBjWI2NA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-d3019675980cf0abf4f2.js"],"component---src-templates-post-js":["/component---src-templates-post-js-e53e03350cbcd581c191.js"],"component---src-pages-code-js":["/component---src-pages-code-js-c2112c44320155c10823.js"],"component---src-pages-index-js":["/component---src-pages-index-js-96e8ebe32fa5c162fac8.js"],"component---src-pages-words-js":["/component---src-pages-words-js-71b702aaaf60141b71c2.js"],"pages-manifest":["/pages-manifest-b0cbcb2560496481148d.js"]};/*]]>*/</script><script src="/component---src-templates-post-js-e53e03350cbcd581c191.js" async=""></script><script src="/app-d3019675980cf0abf4f2.js" async=""></script><script src="/webpack-runtime-c27e3a610803bca512b0.js" async=""></script></body></html>
