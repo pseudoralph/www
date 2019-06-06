@@ -5,7 +5,7 @@ import '../style/menu.css';
 import '../style/layout.css';
 
 const MenuHOC = WrappedComponent => {
-  return () => {
+  return props => {
     const [menuToggle, setMenuToggle] = useState(false);
 
     return (
@@ -20,7 +20,7 @@ const MenuHOC = WrappedComponent => {
           isShowing={menuToggle}
           closeSidebar={() => setMenuToggle(false)}
         />
-        <WrappedComponent className="works" />
+        <WrappedComponent {...props} />
       </div>
     );
   };
