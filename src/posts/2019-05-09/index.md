@@ -2,11 +2,10 @@
 path: '/component-level-key-listener'
 date: '2019-05-09'
 title: 'Component-level key listener'
-tags: ['first']
+tags: ['how to']
 excerpt: 'Key listeners are inherently bound to input elements. This makes sense but presents a challenge when you want to continuously listen for key strokes and respond when a component has no input element. '
+category: 'words'
 ---
-
-# Component-level key listener
 
 Key listeners are inherently bound to input elements. This makes sense but presents a challenge when you want to continuously listen for key strokes and respond when a component has no input element.
 
