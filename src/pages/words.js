@@ -28,7 +28,7 @@ function Words({ data: { allMarkdownRemark } }) {
 
 export const query = graphql`
   query getAllPosts {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: { frontmatter: { category: { eq: "words" } } }) {
       edges {
         node {
           id
