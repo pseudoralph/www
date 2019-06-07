@@ -14,7 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 path
                 date
-                excerpt
+                category
               }
               id
             }
@@ -24,11 +24,11 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: `/words${node.frontmatter.path}`,
+          path: `/${node.frontmatter.category}${node.frontmatter.path}`,
           component: postTemplate,
           context: {
             pathSlug: node.frontmatter.path,
-            render: true
+            catSlug: node.frontmatter.category
           }
         });
       });
