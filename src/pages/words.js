@@ -15,7 +15,7 @@ function Words({ data: { allMarkdownRemark } }) {
           <div className="individual-article-div" key={node.id}>
             <h2>{node.frontmatter.title}</h2>
             <p>
-              <Link to={`words${node.frontmatter.path}`}>
+              <Link to={`/words${node.frontmatter.path}`}>
                 {node.frontmatter.excerpt}
               </Link>
             </p>

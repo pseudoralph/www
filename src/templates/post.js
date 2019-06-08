@@ -30,7 +30,6 @@ const Post = ({
 };
 
 export default menuHOC(Post);
-// (filter: {frontmatter: {category: {eq: "words"}}})
 
 export const query = graphql`
   query($pathSlug: String!) {

@@ -5,18 +5,18 @@
   "version": "0.1.0",
   "author": "Ralph Perdomo <ralph@prdmo.com>",
   "dependencies": {
-    "gatsby": "^2.3.3",
+    "gatsby": "^2.8.6",
     "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-source-filesystem": "^2.0.38",
+    "gatsby-transformer-remark": "^2.3.12",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.18.2"
   },
   "license": "MIT",
   "scripts": {
