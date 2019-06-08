@@ -8,7 +8,7 @@ const Post = ({
   data: {
     markdownRemark: {
       html,
-      frontmatter: { title, date, tags }
+      frontmatter: { title, date }
     }
   }
 }) => {
@@ -22,7 +22,6 @@ const Post = ({
         <div>
           <h1>{title}</h1>
           <p>{prettyDate}</p>
-          <p>{tags}</p>
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
@@ -39,7 +38,6 @@ export const query = graphql`
       frontmatter {
         title
         date
-        tags
         category
       }
       html
