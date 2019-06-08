@@ -3,7 +3,7 @@
 }
 
 .outer-wrapper {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 .title-heading-div {
