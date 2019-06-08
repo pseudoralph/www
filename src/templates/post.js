@@ -2,18 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import menuHOC from '../components/menuHOC';
 import moment from 'moment';
-
-const scroller = () => {
-  const docBody = document.body;
-  const docElement = document.documentElement;
-
-  return (
-    ((docElement.scrollTop || docBody.scrollTop) /
-      ((docElement.scrollHeight || docBody.scrollHeight) -
-        docElement.clientHeight)) *
-    100
-  );
-};
+import Progress from '../components/Progress';
 
 const Post = ({
   data: {
@@ -25,21 +14,10 @@ const Post = ({
 }) => {
   const prettyDate = moment(`${date}`).format('dddd, MMMM Do YYYY');
 
-  const percentComplete = React.createRef();
   return (
-    <div
-      onWheel={() => (percentComplete.current.style.width = `${scroller()}%`)}
-    >
-      <div
-        ref={percentComplete}
-        style={{
-          position: 'fixed',
-          height: '.25rem',
-          backgroundColor: 'grey',
-          width: 0
-        }}
-      />
-      {/* </div> */}
+    <div>
+      <Progress />
+
       <div className="blog-post-div">
         <div>
           <h1>{title}</h1>
