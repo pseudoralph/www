@@ -26,7 +26,7 @@ const Progress = () => {
       style={{
         position: 'fixed',
         height: '.25rem',
-        backgroundColor: 'grey',
+        backgroundColor: '#393939',
         width: `${percentComplete}%`
       }}
     />

@@ -25,6 +25,6 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "rm -rf ./docs ./public; npm run build; mv ./public/ ./docs/; cp ./CNAME ./docs/CNAME; git add .; git commit -m \"deploy commit to gh-pages\"; git push origin master "
+    "deploy": "rm -rf ./docs ./public ./cache; npm run build; mv ./public/ ./docs/; cp ./CNAME ./docs/CNAME; git add .; git commit -m \"deploy commit to gh-pages\"; git push origin master "
   }
 }
