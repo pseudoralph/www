@@ -3,7 +3,9 @@ import { Link } from 'gatsby';
 import { closeButtonIcon, github, linkedin } from '../images/ui';
 import '../style/sidebar.css';
 
-const SideBar = ({ isShowing, closeSidebar }) => {
+const SideBar = props => {
+  const { isShowing, closeSidebar } = props;
+  console.log(props);
   return (
     <div
       onPointerLeave={() => closeSidebar()}
@@ -25,13 +27,21 @@ const SideBar = ({ isShowing, closeSidebar }) => {
           </li>
 
           <li>
-            <Link to="/code" activeClassName="sidebar-link-active">
+            <Link
+              to="/code"
+              partiallyActive={true}
+              activeClassName="sidebar-link-active"
+            >
               /code
             </Link>
           </li>
 
           <li>
-            <Link to="/words" activeClassName="sidebar-link-active">
+            <Link
+              to="/words"
+              partiallyActive={true}
+              activeClassName="sidebar-link-active"
+            >
               /words
             </Link>
           </li>
