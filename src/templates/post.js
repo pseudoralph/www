@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import menuHOC from '../components/menuHOC';
-import moment from 'moment';
 import Progress from '../components/Progress';
 
 const Post = ({
@@ -12,8 +11,6 @@ const Post = ({
     }
   }
 }) => {
-  const prettyDate = moment(`${date}`).format('dddd, MMMM Do YYYY');
-
   return (
     <div>
       <Progress />
@@ -21,7 +18,7 @@ const Post = ({
       <div className="blog-post-div">
         <div>
           <h1>{title}</h1>
-          <p>{prettyDate}</p>
+          <p>{date}</p>
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
@@ -36,7 +33,7 @@ export const query = graphql`
     markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         title
-        date
+        date(formatString: "dddd, MMMM Do YYYY")
         category
       }
       html
