@@ -3,9 +3,7 @@ import { Link } from 'gatsby';
 import { closeButtonIcon, github, linkedin } from '../images/ui';
 import '../style/sidebar.css';
 
-const SideBar = props => {
-  const { isShowing, closeSidebar } = props;
-  console.log(props);
+const SideBar = ({ isShowing, closeSidebar }) => {
   return (
     <div
       onPointerLeave={() => closeSidebar()}
