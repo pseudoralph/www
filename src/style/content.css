@@ -24,6 +24,11 @@
   box-sizing: border-box;
 }
 
+.articles-wrapper a {
+  text-decoration: none;
+  color: var(--black-text);
+}
+
 .individual-article-div {
   display: inline-block;
   width: calc(50% - 2em);
@@ -35,6 +40,18 @@
 
 .blog-post-div {
   padding: 1em 1em 1em 4em;
+}
+
+.read-more {
+  position: relative;
+  float: right;
+  display: inline-block;
+  background-color: var(--black-text);
+  color: white;
+  font-family: monospace;
+  padding: 0em 0.5em;
+  margin: -0.5em -0.7em;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 860px) {
