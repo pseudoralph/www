@@ -8,6 +8,7 @@
     "gatsby": "^2.8.6",
     "gatsby-plugin-google-analytics": "^2.0.21",
     "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "prop-types": "^15.7.2",

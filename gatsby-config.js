@@ -2,9 +2,11 @@ module.exports = {
   siteMetadata: {
     title: 'prdmo',
     description: 'front-end web dev',
-    author: 'Ralph Perdomo'
+    author: 'Ralph Perdomo',
+    siteUrl: 'https://prdmo.com'
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-analytics`,
