@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'prdmo',
-    description: 'front-end web dev',
+    description: 'ralph perdomo front-end web dev',
     author: 'Ralph Perdomo',
     siteUrl: 'https://prdmo.com'
   },

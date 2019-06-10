@@ -1,39 +1,22 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import menuHOC from '../components/menuHOC';
 import '../style/index.css';
-
-const Header = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              description
-            }
-          }
-        }
-      `}
-      render={data => {
-        return (
-          <div className="index-wrapper-div">
-            <h1 className="index-title">{data.site.siteMetadata.title}</h1>
-            <p className="index-description">
-              {data.site.siteMetadata.description}
-            </p>
-          </div>
-        );
-      }}
-    />
-  );
-};
 
 function IndexPage() {
   return (
     <div>
-      <Header />
+      <div className="index-wrapper-div">
+        <h1 className="index-title">prdmo</h1>
+
+        <p className="index-description">
+          <span style={{ fontSize: '1.5rem', fontWeight: '700' }}>
+            ralph perdomo
+          </span>
+          <br />
+
+          <span style={{ fontSize: '1.15rem' }}>front-end web dev</span>
+        </p>
+      </div>
     </div>
   );
 }
