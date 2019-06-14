@@ -25,8 +25,8 @@
     "clean": "gatsby clean",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "gatsby clean; gatsby develop",
     "serve": "gatsby serve",
-    "deploy": "rm -rf ./docs ./public ./cache; npm run build; mv ./public/ ./docs/; cp ./CNAME ./docs/CNAME; git add .; git commit -m \"deploy commit to gh-pages\"; git push origin master "
+    "deploy": "rm -rf ./docs ./public; gatsby clean; gatsby build; mv ./public/ ./docs/; cp ./CNAME ./docs/CNAME; git add .; git commit -m \"deploy commit to gh-pages\"; git push origin master "
   }
 }
