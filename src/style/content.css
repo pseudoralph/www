@@ -54,6 +54,76 @@
   font-weight: 700;
 }
 
+/* code section here */
+
+.code-box {
+  margin-bottom: 1em;
+  width: 50%;
+  border: 0.2em solid black;
+  border-radius: 0.2em;
+  padding: 0.7em;
+}
+
+.code-description {
+  margin: 1em 0px 0px 1.5em;
+  display: block;
+}
+
+.code-box h2 {
+  margin: 0px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+img.project-image {
+  margin: 0px 0.5em 0px 0px;
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 2.6em;
+}
+
+.code-tags {
+  margin-top: 1.75em;
+}
+
+.code-tags ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.code-tags li {
+  font-size: 0.8em;
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  border: 2px solid var(--black-text);
+  margin-right: 0.5em;
+  border-radius: 0.2em;
+}
+
+.code-tags p {
+  display: inline-block;
+  margin-right: 0.8em;
+}
+
+.goto-links {
+  font-family: sans-serif;
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  padding: 0.3rem 1rem 0.1rem;
+  background: black;
+  color: white;
+  border-radius: 0.2em;
+  font-size: 0.8em;
+}
+
+.goto-links img {
+  width: 1.3em;
+  margin: 0;
+  vertical-align: middle;
+  margin: 0 0.5em 0 0;
+}
+
 @media only screen and (max-width: 860px) {
   .individual-article-div {
     width: calc(100% - 2em);
