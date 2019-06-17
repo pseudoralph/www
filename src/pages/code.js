@@ -42,6 +42,10 @@ function Code() {
         <h1 id="title-heading">/code</h1>
       </div>
       <div className="articles-wrapper">
+        <div className="code-box-quote">
+          Lorem ipsum quotesome goes'um here'm.
+          <p id="quote-author">-Unknown</p>
+        </div>
         {codingProjectsDB.map(project => (
           <div className="code-box" key={project.title}>
             <img

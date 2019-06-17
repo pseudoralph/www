@@ -64,6 +64,25 @@
   padding: 0.7em;
 }
 
+.code-box-quote {
+  border-left: 0.2em solid black;
+  font-style: italic;
+
+  text-align: center;
+  width: 55%;
+  display: table;
+  padding: 1em 3em 2em;
+  margin: 1em auto 2em;
+  /* margin: 1em auto; */
+  /* display: inline-block; */
+}
+
+#quote-author {
+  text-align: right;
+  margin: 1em 0 0;
+  color: #a3a3a3;
+}
+
 .code-description {
   margin: 1em 0px 0px 1.5em;
   display: block;
