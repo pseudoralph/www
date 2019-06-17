@@ -3,37 +3,21 @@ import menuHOC from '../components/menuHOC';
 import '../style/layout.css';
 import '../style/content.css';
 import { code, web } from '../images/ui';
-import { domino, vignette, volunteer } from '../images/icons';
+import quotesDB from '../db/quotesDB';
+import { codingProjectsDB } from '../db/codingProjectsDB';
 
-const codingProjectsDB = [
-  {
-    title: 'Double 9 dominos',
-    description: `A multi-player double nine's (Cuban variant) game of dominoes.  Manages data, control, and session state through redux.`,
-    site: 'https://domino.prdmo.com/#/',
-    git: 'https://github.com/pseudoralph/react-domino',
-    icon: domino,
-    alt: 'domino tile ficha',
-    techs: ['React', 'Redux', 'Firebase']
-  },
-  {
-    title: 'Vignette',
-    description: `A microblogging site crossed with Snapchat. A proof-of-concept that shows how ephemerality can exist in an always-on and continuously archived digital world.`,
-    site: 'http://vignette.prdmo.com',
-    git: 'https://github.com/pseudoralph/vignette',
-    icon: vignette,
-    alt: 'vignette photo effect',
-    techs: ['React']
-  },
-  {
-    title: 'Volunteer Tracker',
-    description: `A mobile web application I created to simplify the management and organization of teams working on projects. This app uses CRUD principles through postgreSQL.`,
-    site: 'http://tracker.prdmo.com/',
-    git: 'https://github.com/pseudoralph/volunteer_tracker',
-    icon: volunteer,
-    alt: 'hand raised',
-    techs: ['Ruby', 'pSQL']
-  }
-];
+function RandomQuote() {
+  const quoteId = Math.floor(Math.random() * Math.floor(quotesDB.length));
+
+  return (
+    <div className="code-box-quote">
+      <a href={quotesDB[quoteId].url} target="_blank" rel="noopener noreferrer">
+        <p>{quotesDB[quoteId].quote}</p>
+      </a>
+      <p id="quote-author">{quotesDB[quoteId].author}</p>
+    </div>
+  );
+}
 
 function Code() {
   return (
@@ -42,10 +26,7 @@ function Code() {
         <h1 id="title-heading">/code</h1>
       </div>
       <div className="articles-wrapper">
-        <div className="code-box-quote">
-          Lorem ipsum quotesome goes'um here'm.
-          <p id="quote-author">-Unknown</p>
-        </div>
+        <RandomQuote />
         {codingProjectsDB.map(project => (
           <div className="code-box" key={project.title}>
             <img
