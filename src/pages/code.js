@@ -7,14 +7,19 @@ import quotesDB from '../db/quotesDB';
 import { codingProjectsDB } from '../db/codingProjectsDB';
 
 function RandomQuote() {
-  const quoteId = Math.floor(Math.random() * Math.floor(quotesDB.length));
+  const filteredQuotes = quotesDB.filter(x => x.quote.length <= 85);
+  const quoteId = Math.floor(Math.random() * Math.floor(filteredQuotes.length));
 
   return (
     <div className="code-box-quote">
-      <a href={quotesDB[quoteId].url} target="_blank" rel="noopener noreferrer">
-        <p>{quotesDB[quoteId].quote}</p>
+      <a
+        href={filteredQuotes[quoteId].url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <p>{filteredQuotes[quoteId].quote}</p>
       </a>
-      <p id="quote-author">{quotesDB[quoteId].author}</p>
+      <p id="quote-author">{filteredQuotes[quoteId].author}</p>
     </div>
   );
 }
