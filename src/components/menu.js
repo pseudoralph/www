@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { menuBarIcon } from '../images/ui';
 import SideBar from './sideBar';
-import '../style/menu.css';
 
 const Menu = () => {
   const [menuToggle, setMenuToggle] = useState(false);
 
   return (
-    <div>
+    <>
       <img
-        onClick={() => setMenuToggle(menuToggle ? false : true)}
-        className="pancake-icon"
+        onClick={() => setMenuToggle(true)}
+        className="menu-icon-img"
         alt="menu bar"
         src={menuBarIcon}
       />
       <SideBar
         isShowing={menuToggle}
-        closeSidebar={() => setMenuToggle(menuToggle ? false : true)}
+        closeSidebar={() => setMenuToggle(false)}
       />
-    </div>
+    </>
   );
 };
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { closeButtonIcon, github, linkedin } from '../images/ui';
-import '../style/sidebar.css';
 
 const SideBar = ({ isShowing, closeSidebar }) => {
   return (
     <div
-      onPointerLeave={() => closeSidebar()}
+      onPointerLeave={closeSidebar}
       className="sidebar-main"
       style={isShowing ? { left: '0' } : { left: '-20rem' }}
     >
@@ -19,7 +18,11 @@ const SideBar = ({ isShowing, closeSidebar }) => {
       <div className="sidebar-links-container">
         <ul>
           <li>
-            <Link to="/" activeClassName="sidebar-link-active">
+            <Link
+              to="/"
+              onClick={closeSidebar}
+              activeClassName="sidebar-link-active"
+            >
               /
             </Link>
           </li>
@@ -28,6 +31,7 @@ const SideBar = ({ isShowing, closeSidebar }) => {
             <Link
               to="/code"
               partiallyActive={true}
+              onClick={closeSidebar}
               activeClassName="sidebar-link-active"
             >
               /code
@@ -38,6 +42,7 @@ const SideBar = ({ isShowing, closeSidebar }) => {
             <Link
               to="/words"
               partiallyActive={true}
+              onClick={closeSidebar}
               activeClassName="sidebar-link-active"
             >
               /words
