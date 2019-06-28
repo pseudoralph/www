@@ -1,7 +1,7 @@
 import React from 'react';
+import PageWrapper from '../components/pageWrapper';
+import Progress from '../components/progress';
 import { graphql } from 'gatsby';
-import menuHOC from '../components/menuHOC';
-import Progress from '../components/Progress';
 
 const Post = ({
   data: {
@@ -12,9 +12,8 @@ const Post = ({
   }
 }) => {
   return (
-    <div>
+    <>
       <Progress />
-
       <div className="blog-post-div">
         <div>
           <h1>{title}</h1>
@@ -22,11 +21,11 @@ const Post = ({
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
-    </div>
+    </>
   );
 };
 
-export default menuHOC(Post);
+export default PageWrapper(Post);
 
 export const query = graphql`
   query($pathSlug: String!) {
