@@ -1,4 +1,4 @@
-import { domino, vignette, volunteer } from '../images/icons';
+import { domino, vignette, volunteer, scraping } from '../images/icons';
 
 export const codingProjectsDB = [
   {
@@ -9,6 +9,14 @@ export const codingProjectsDB = [
     icon: domino,
     alt: 'domino tile ficha',
     techs: ['React', 'Redux', 'Firebase']
+  },
+  {
+    title: 'Goodreads Scraper (API)',
+    description: `The Goodreads' API has several endpoints. An endpoint that delivers all quotes, however, is not one. This API fetches all quotes classified under a particular tag.`,
+    git: 'https://github.com/pseudoralph/goodreads-quotes-scraper',
+    icon: scraping,
+    alt: 'scraper',
+    techs: ['Node.js', 'Express']
   },
   {
     title: 'Vignette',
