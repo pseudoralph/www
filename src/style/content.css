@@ -144,9 +144,13 @@ img.project-image {
   border-radius: 0.2em;
 }
 
+.code-tags li:last-of-type {
+  margin-right: 0;
+}
+
 .code-tags p {
   display: inline-block;
-  margin-right: 0.8em;
+  margin-right: 0.6em;
 }
 
 .goto-links {
