@@ -1,18 +1,3 @@
-// https://www.goodreads.com/quotes/tag/programming
-//
-// Array.from(document.getElementsByClassName('quoteDetails')).map(x => [
-//   {
-//     author: x
-//       .getElementsByClassName('authorOrTitle')[0]
-//       .innerText.replace(/\W*$/, ''),
-//     quote: x
-//       .getElementsByClassName('quoteText')[0]
-//       .innerText.replace(/“|”|\n.*$/g, '').replace(/\n/gm, ' '),
-//     url: x.querySelectorAll('a.smallText')[0].href
-//   }
-// ]);
-// document.querySelector('a.next_page').click()
-
 const quotesDB = [
   {
     author: 'Linus Torvalds',
