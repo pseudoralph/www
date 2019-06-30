@@ -11,7 +11,7 @@ export const codingProjectsDB = [
     techs: ['React', 'Redux', 'Firebase']
   },
   {
-    title: 'Goodreads Scraper (API)',
+    title: 'Goodreads Scraper',
     description: `The Goodreads' API has several endpoints. An endpoint that delivers all quotes, however, is not one. This API fetches all quotes classified under a particular tag.`,
     git: 'https://github.com/pseudoralph/goodreads-quotes-scraper',
     icon: scraping,
