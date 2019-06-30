@@ -67,7 +67,7 @@
   text-align: center;
   width: calc(80% - 7em);
   display: table;
-  padding: 1em 1em 0;
+  padding: 1em 0.5em 0.5em;
   margin: 0 auto 1em;
   color: var(--black-text);
   line-height: 2.2em;
@@ -87,6 +87,12 @@
   font-size: 2em;
   line-height: 1em;
   padding-left: 0.1em;
+}
+
+.code-box-quote img {
+  width: 1.33em;
+  margin: 0.33em;
+  vertical-align: middle;
 }
 
 #quote-author {

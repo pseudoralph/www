@@ -4,5 +4,6 @@ import linkedin from './linkedin-logo.svg';
 import github from './github-logo.svg';
 import code from './code.svg';
 import web from './web.svg';
+import link from './link.svg';
 
-export { menuBarIcon, closeButtonIcon, linkedin, github, code, web };
+export { menuBarIcon, closeButtonIcon, linkedin, github, code, web, link };
