@@ -5,15 +5,15 @@
   "version": "0.1.0",
   "author": "Ralph Perdomo <ralph@prdmo.com>",
   "dependencies": {
-    "gatsby": "^2.8.6",
-    "gatsby-plugin-google-analytics": "^2.0.21",
-    "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-plugin-sitemap": "^2.1.0",
-    "gatsby-source-filesystem": "^2.0.38",
-    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby": "^2.15.29",
+    "gatsby-plugin-google-analytics": "^2.1.20",
+    "gatsby-plugin-react-helmet": "^3.1.10",
+    "gatsby-plugin-sitemap": "^2.2.16",
+    "gatsby-source-filesystem": "^2.1.29",
+    "gatsby-transformer-remark": "^2.6.27",
     "prop-types": "^15.7.2",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
