@@ -10,7 +10,7 @@ function IndexPage() {
           ralph perdomo
         </span>
         <br />
-        <span style={{ fontSize: '1.15rem' }}>front-end web dev</span>
+        <span style={{ fontSize: '1.08rem' }}>software developer</span>
       </p>
     </div>
   );

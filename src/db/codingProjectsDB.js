@@ -21,7 +21,6 @@ export const codingProjectsDB = [
   {
     title: 'Vignette',
     description: `A microblogging site crossed with Snapchat. A proof-of-concept that shows how ephemerality can exist in an always-on and continuously archived digital world.`,
-    site: 'http://vignette.prdmo.com',
     git: 'https://github.com/pseudoralph/vignette',
     icon: vignette,
     alt: 'vignette photo effect',
